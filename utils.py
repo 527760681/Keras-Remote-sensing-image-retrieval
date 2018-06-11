@@ -43,7 +43,7 @@ def load_data():
 
     data=numpy.stack(X,axis=0)
     label = numpy.stack(Y,axis=0)
-    print(label.shape)
+
     X_train, X_test, y_train, y_test = train_test_split(data, label, test_size=0.1, random_state=42)
     y_train= to_categorical(y_train,num_classes=21)
     y_test = to_categorical(y_test, num_classes=21)
