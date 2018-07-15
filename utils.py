@@ -9,12 +9,12 @@ landuse_image_path = r'.\UCMerced_LandUse\Images'
 csv_path = r'.\UCMerced_LandUse\class.txt'
 
 img_size = 224
+
 def write_csv():
     floders = os.listdir(landuse_image_path)
 
     f = open(csv_path, 'a', newline='', encoding='utf8')
     writer = csv.writer(f)
-
 
     class_num = 0
     for floder in floders:
@@ -28,7 +28,6 @@ def write_csv():
         # print(class_num)
 
     f.close()
-
 
 def load_data():
     X=[]
@@ -50,6 +49,6 @@ def load_data():
 
     return X_train, X_test, y_train, y_test
 
-X_train, X_test, y_train, y_test = load_data()
+# X_train, X_test, y_train, y_test = load_data()
 
 # resize_img()
