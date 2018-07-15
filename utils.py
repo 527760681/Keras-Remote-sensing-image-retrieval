@@ -15,7 +15,7 @@ def write_csv():
     f = open(csv_path, 'a', newline='', encoding='utf8')
     writer = csv.writer(f)
 
-    # print(floders)
+
     class_num = 0
     for floder in floders:
         floder = os.path.join(landuse_image_path, floder)  # r'.\UCMerced_LandUse\Images\beach'
