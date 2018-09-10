@@ -2,7 +2,7 @@
  
 this is an implement of [DenseNet]() using keras ,this project can do Remote sensing image classifiy or retrieval.I trained and evaluated this model on a dataset called [PatternNet](https://www.researchgate.net/publication/317558235_PatternNet_A_Benchmark_Dataset_for_Performance_Evaluation_of_Remote_Sensing_Image_Retrieval).
 
-##Dependencies
+## Dependencies
 
 The project was tested in the following environment
 
@@ -18,10 +18,10 @@ I build this project in Windows 10 so there maybe some path problems when rebuil
 
 You may also need a GPU to speed up the train process,so  installtion of the CUDA/CUDNN kit maybe necessary.
 
+ 
+## How to use
 
-##How to use
-
-###Data setup
+### Data setup
 
 Using my PatternNet dataset or your own dataset,all you need to do is
 
@@ -48,12 +48,12 @@ After this,you need to run `utils.write_csv()`.This function need 3 parameters `
     	
     write_csv(image_folder, csv_train_path, csv_test_path)
 
-###Models
+### Models
 To use pretrained weights,you should set the `weights='imagenet'` when reference `DenseNet.DenseNet()`
 
 When training your own dataset from scratch,simply set the `weights=None`.
 
-####Train
+#### Train
 
 To train a model use
 	
@@ -80,7 +80,7 @@ After training,you can call `tensorboard` to see the results in detail.use `cd` 
 
 `>tensorboard --logdir log_filepath`
 
-####Image classification
+#### Image classification
 
 To do classification job,simply use the weights file that you trained in the last step,and call `train_and_val.validate()`.Here are the demo:
 
@@ -97,11 +97,11 @@ To do classification job,simply use the weights file that you trained in the las
 
 The result is saved `csv_result_path`.
 
-####Image retrieval
+#### Image retrieval
 
 This function contains two parts: `index` and `retrieval`
 
-#####index
+##### index
 
 This is an implement of feature extraction.The DenseNet's avg pool layer is used to extract features .`img_path,label,features` are saved into index_file.
 	
@@ -116,7 +116,7 @@ This is an implement of feature extraction.The DenseNet's avg pool layer is used
 	index(image_size,classes,
           model_path,csv_imageLib_path,index_file)
 
-#####retrieval
+##### retrieval
 
 This function use Euclidean distance to find out the image which is similar as target image.Note that `target_path` need to be a csv file which formatted as `image_path,category`,only one image should be in this file
 	
@@ -132,7 +132,7 @@ This function use Euclidean distance to find out the image which is similar as t
 				model_path,target_path,index_file,
 				retrieval_result_file)
 
-##Other things
+## Other things
 
 This is my second project in Github,hope you can star or fork this project~
 
