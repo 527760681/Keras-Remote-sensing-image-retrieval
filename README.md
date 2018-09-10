@@ -1,6 +1,6 @@
 # Remote sensing image retrieval
  
-this is an implement of [DenseNet]() using keras ,this project can do Remote sensing image classifiy or retrieval.I trained and evaluated this model on a dataset called [PatternNet](https://www.researchgate.net/publication/317558235_PatternNet_A_Benchmark_Dataset_for_Performance_Evaluation_of_Remote_Sensing_Image_Retrieval).
+this is an implement of [DenseNet](https://arxiv.org/abs/1608.06993) using keras ,this project can do Remote sensing image classifiy or retrieval.I trained and evaluated this model on a dataset called [PatternNet](https://www.researchgate.net/publication/317558235_PatternNet_A_Benchmark_Dataset_for_Performance_Evaluation_of_Remote_Sensing_Image_Retrieval).
 
 ## Dependencies
 
@@ -23,7 +23,7 @@ You may also need a GPU to speed up the train process,so  installtion of the CUD
 
 ### Data setup
 
-Using my PatternNet dataset or your own dataset,all you need to do is
+Using [my PatternNet dataset](https://drive.google.com/open?id=12AWdgYjDOfg8usG33VIyJn-0nkJJQ4Gv) or your own dataset,all you need to do is
 
 + Create a new folder,such as
 
@@ -76,6 +76,8 @@ To train a model use
 
 The parameter above can be changed to adjust model performance.
 
+here is the weights file -[pattern.h5](https://drive.google.com/open?id=12RzB-pSAdV4l6fRjbZdz0icbXkH71XHo)
+
 After training,you can call `tensorboard` to see the results in detail.use `cd` command to navigate to the project folder,then
 
 `>tensorboard --logdir log_filepath`
@@ -116,6 +118,7 @@ This is an implement of feature extraction.The DenseNet's avg pool layer is used
 	index(image_size,classes,
           model_path,csv_imageLib_path,index_file)
 
+here is the index-file [PatternNet_index.h5](https://drive.google.com/open?id=137BtbL7u4NE9Zb-JVWjgpQCakFk5RH1Z) 
 ##### retrieval
 
 This function use Euclidean distance to find out the image which is similar as target image.Note that `target_path` need to be a csv file which formatted as `image_path,category`,only one image should be in this file
